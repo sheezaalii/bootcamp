@@ -1,0 +1,128 @@
+1)
+Program <sumOfTwoNumbers>:
+sum =0
+Read A
+Read B
+sum = A + B
+Print sum
+End;
+
+2)
+Program <evenNumbers>:
+num = 1
+while(num <= 100)
+if(num%2==0)
+Print num
+endIf
+num = num + 1
+EndWhile
+End;
+
+3)
+Program <LeapYear>
+Read year
+if(year%400)
+Print "Leap year"
+else if(year%100 !=0 && year%4 == 0)
+Print "Leap year"
+else
+Print "Not leap year"
+EndIf
+End;
+
+4)
+Program <kmphToMph>:
+Read kmph
+mph = kmph * 0.621371
+Print mph
+End;
+
+5)
+Program <buzzNumber>:
+Read buzz_num
+if(buzz_num%7 == 0 || buzz_num%10 == 7)
+Print "Buzz number"
+End;
+
+6)
+Program <multiplication>:
+counter = 1
+mul = 1
+Read num
+while(counter <= 10)
+mul = num * counter
+Print (num * counter = mul)
+counter = counter + 1
+EndWhile
+End;
+
+7)
+Program <factorial>:
+Read n
+fac = 1
+counter = 1
+while(counter<=n)
+fac = fac * counter
+counter = counter+1
+EndWhile
+Print fac
+End;
+
+8)
+Program <isPrimeNum>:
+Read num
+isPrime = true
+counter = 2
+while(counter <= num/2)
+if(num%counter == 0)
+isPrime = false
+counter = counter + 1
+EndWhile
+if(isPrime)
+Print "Number is a prime number"
+else
+Print "Number is not a prime number"
+End;
+
+9)
+Program <triangles>:
+Read A
+Read B
+Read C
+
+if(A == B && B == C)
+Print "Equilateral Triangle"
+else if(A == B || B == C || C == A)
+Print "Isosceles Triangle"
+else
+Print "Scalene Triangle"
+EndIf
+End;
+
+10)
+Program <pattern>:
+Read num
+counter = 1
+counter1 = 1
+for(counter = 1 to num)
+for(counter1 = 1 to counter)
+Print "x"
+EndFor
+End;
+
+11)
+Program <palindrome>:
+reverse = 0
+Read num
+check = num
+while(num != 0)
+units = num%10
+reverse = (reverse*10)+units 
+num = num/10
+EndWhile
+if(check == reverse)
+Print "Palindrome"
+else
+Print "Not Palindrome"
+EndIf
+End;
