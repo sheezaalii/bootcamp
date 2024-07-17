@@ -1,0 +1,15 @@
+S:\bootcamp\OOP 04\bin\Debug\net8.0\OOP 03.exe
+S:\bootcamp\OOP 04\bin\Debug\net8.0\OOP 03.deps.json
+S:\bootcamp\OOP 04\bin\Debug\net8.0\OOP 03.runtimeconfig.json
+S:\bootcamp\OOP 04\bin\Debug\net8.0\OOP 03.dll
+S:\bootcamp\OOP 04\bin\Debug\net8.0\OOP 03.pdb
+S:\bootcamp\OOP 04\obj\Debug\net8.0\OOP 03.GeneratedMSBuildEditorConfig.editorconfig
+S:\bootcamp\OOP 04\obj\Debug\net8.0\OOP 03.AssemblyInfoInputs.cache
+S:\bootcamp\OOP 04\obj\Debug\net8.0\OOP 03.AssemblyInfo.cs
+S:\bootcamp\OOP 04\obj\Debug\net8.0\OOP 03.csproj.CoreCompileInputs.cache
+S:\bootcamp\OOP 04\obj\Debug\net8.0\OOP 03.sourcelink.json
+S:\bootcamp\OOP 04\obj\Debug\net8.0\OOP 03.dll
+S:\bootcamp\OOP 04\obj\Debug\net8.0\refint\OOP 03.dll
+S:\bootcamp\OOP 04\obj\Debug\net8.0\OOP 03.pdb
+S:\bootcamp\OOP 04\obj\Debug\net8.0\OOP 03.genruntimeconfig.cache
+S:\bootcamp\OOP 04\obj\Debug\net8.0\ref\OOP 03.dll

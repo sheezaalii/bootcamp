@@ -1,0 +1,15 @@
+S:\bootcamp\Project-LibraryManagement\bin\Debug\net8.0\Project-LibraryManagement.exe
+S:\bootcamp\Project-LibraryManagement\bin\Debug\net8.0\Project-LibraryManagement.deps.json
+S:\bootcamp\Project-LibraryManagement\bin\Debug\net8.0\Project-LibraryManagement.runtimeconfig.json
+S:\bootcamp\Project-LibraryManagement\bin\Debug\net8.0\Project-LibraryManagement.dll
+S:\bootcamp\Project-LibraryManagement\bin\Debug\net8.0\Project-LibraryManagement.pdb
+S:\bootcamp\Project-LibraryManagement\obj\Debug\net8.0\Project-LibraryManagement.GeneratedMSBuildEditorConfig.editorconfig
+S:\bootcamp\Project-LibraryManagement\obj\Debug\net8.0\Project-LibraryManagement.AssemblyInfoInputs.cache
+S:\bootcamp\Project-LibraryManagement\obj\Debug\net8.0\Project-LibraryManagement.AssemblyInfo.cs
+S:\bootcamp\Project-LibraryManagement\obj\Debug\net8.0\Project-LibraryManagement.csproj.CoreCompileInputs.cache
+S:\bootcamp\Project-LibraryManagement\obj\Debug\net8.0\Project-LibraryManagement.sourcelink.json
+S:\bootcamp\Project-LibraryManagement\obj\Debug\net8.0\Project-LibraryManagement.dll
+S:\bootcamp\Project-LibraryManagement\obj\Debug\net8.0\refint\Project-LibraryManagement.dll
+S:\bootcamp\Project-LibraryManagement\obj\Debug\net8.0\Project-LibraryManagement.pdb
+S:\bootcamp\Project-LibraryManagement\obj\Debug\net8.0\Project-LibraryManagement.genruntimeconfig.cache
+S:\bootcamp\Project-LibraryManagement\obj\Debug\net8.0\ref\Project-LibraryManagement.dll
