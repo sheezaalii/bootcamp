@@ -1,0 +1,74 @@
+[
+    {
+        "title": "NOVEL 2: Textbook (3rd Edition)",
+        "author": "Author 1",
+        "description": "Description of NOVEL 2",
+        "image": "Pictures/books/1.jpeg"
+    },
+    {
+        "title": "WEBTOON 1: Textbook (3rd Edition)",
+        "author": "Author 2",
+        "description": "Description of WEBTOON 1",
+        "image": "Pictures/books/8.jpeg"
+    },
+    {
+        "title": "GENKI 1: Textbook (3rd Edition)",
+        "author": "Author 3",
+        "description": "Description of GENKI 1",
+        "image": "Pictures/books/3.jpeg"
+    },
+    {
+        "title": "MANGA 1: Textbook (3rd Edition)",
+        "author": "Author 4",
+        "description": "Description of WEBTOON 1",
+        "image": "Pictures/books/4.jpeg"
+    },
+    {
+        "title": "COMIC 1: Textbook (3rd Edition)",
+        "author": "Author 3",
+        "description": "Description of GENKI 1",
+        "image": "Pictures/books/5.jpeg"
+    },
+    {
+        "title": "MOONTOWN 1: Textbook (3rd Edition)",
+        "author": "Author 4",
+        "description": "Description of WEBTOON 1",
+        "image": "Pictures/books/6.jpeg"
+    },
+    {
+        "title": "MOONTOWN 1: Textbook (3rd Edition)",
+        "author": "Author 4",
+        "description": "Description of MANGA 1",
+        "image": "Pictures/books/7.jpeg"
+    },
+    {
+        "title": "MANGA 1: Textbook (3rd Edition)",
+        "author": "Author 4",
+        "description": "Description of WEBTOON 1",
+        "image": "Pictures/books/8.jpeg"
+    },
+    {
+        "title": "NOVEL 1: Textbook (3rd Edition)",
+        "author": "Author 4",
+        "description": "Description of MANGA 1",
+        "image": "Pictures/books/9.jpeg"
+    },
+    {
+        "title": "WEBTOON 1: Textbook (3rd Edition)",
+        "author": "Author 2",
+        "description": "Description of WEBTOON 1",
+        "image": "Pictures/books/10.jpeg"
+    },
+    {
+        "title": "MESSY FIRES 1: Textbook (3rd Edition)",
+        "author": "Author 2",
+        "description": "Description of WEBTOON 1",
+        "image": "Pictures/books/11.jpeg"
+    },
+    {
+        "title": "NOVEL 1: Textbook (3rd Edition)",
+        "author": "Author 2",
+        "description": "Description of WEBTOON 1",
+        "image": "Pictures/books/12.jpeg"
+    }
+]

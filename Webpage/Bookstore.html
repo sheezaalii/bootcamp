@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bookstore.css">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <script src="bookstore.js"></script>
 
     <title>My Online Bookstore</title>
 </head>
 <body>
+
+    
        <!-- header -->
     <header>
         <!-- top header with welcome message and social icons -->
@@ -29,8 +34,10 @@
             <div  class="logo"><img src="Pictures/logo.svg" alt="loading" ></div>
             <div class="search">
                 <img src="Pictures/search-icon.png" alt="">
-                <input type="text" placeholder="search here">
+                <input type="text" id="search-bar" placeholder="search books here">
+                <div id="results"></div>
             </div>
+            
             </div>
         </div>
     </header>
@@ -164,12 +171,7 @@
         <h2>Showing 1–12 of 596 results</h2>
             <!-- featured-books -->
         <div class="featured-books">
-            <div class="book">
-                <img src="Pictures/books/1.jpeg" alt="" class="book-image">
-                <p class="title">NOVEL 2: Textbook (3rd Edition)</p>
-                <h2 class="price">Rs 6,100</h2>
-                <button class="buy">Add to cart</button>
-            </div>
+            <!-- 
             <div class="book">
                 <img src="Pictures/books/8.jpeg" alt="" class="book-image">
                 <p class="title">WEBTOON 1: Textbook (3rd Edition)</p>
@@ -193,31 +195,7 @@
                 <p class="title">GENKI: Answer Key (3rd Edition)</p>
                 <h2 class="price">Rs 1,800</h2>
                 <button class="buy">Add to cart</button>
-            </div>
-            <div class="book">
-                <img src="Pictures/books/6.jpeg" alt="" class="book-image">
-                <p class="title">MANGA: Answer Key (2nd Edition)</p>
-                <h2 class="price">Rs 2,800</h2>
-                <button class="buy">Add to cart</button>
-            </div>
-            <div class="book">
-                <img src="Pictures/books/7.jpeg" alt="" class="book-image">
-                <p class="title">LOONATOON: history news (2nd Edition)</p>
-                <h2 class="price">Rs 2,800</h2>
-                <button class="buy">Add to cart</button>
-            </div>         
-            <div class="book">
-                <img src="Pictures/books/2.jpeg" alt="" class="book-image">
-                <p class="title">MANGA: Answer Key (2nd Edition)</p>
-                <h2 class="price">Rs 2,800</h2>
-                <button class="buy">Add to cart</button>
-            </div>
-            <div class="book">
-                <img src="Pictures/books/9.jpeg" alt="" class="book-image">
-                <p class="title">NOVEL: Answer Key (2nd Edition)</p>
-                <h2 class="price">Rs 2,800</h2>
-                <button class="buy">Add to cart</button>
-            </div>
+            </div> 
             <div class="book">
                 <img src="Pictures/books/10.jpeg" alt="" class="book-image">
                 <p class="title">NOVEL: Answer Key (2nd Edition)</p>
@@ -229,32 +207,10 @@
                 <p class="title">NOVEL: Answer Key (2nd Edition)</p>
                 <h2 class="price">Rs 2,800</h2>
                 <button class="buy">Add to cart</button>
-            </div>
-            <div class="book">
-                <img src="Pictures/books/12.jpeg" alt="" class="book-image">
-                <p class="title">NOVEL: Answer Key (2nd Edition)</p>
-                <h2 class="price">Rs 2,800</h2>
-                <button class="buy">Add to cart</button>
-            </div>
-            <!-- <div class="book">
-                <img src="Pictures/books/13.jpeg" alt="" class="book-image">
-                <p class="title">NOVEL: Answer Key (2nd Edition)</p>
-                <h2 class="price">Rs 2,800</h2>
-                <button class="buy">Add to cart</button>
-            </div>
-            <div class="book">
-                <img src="Pictures/books/14.jpeg" alt="" class="book-image">
-                <p class="title">NOVEL: Answer Key (2nd Edition)</p>
-                <h2 class="price">Rs 2,800</h2>
-                <button class="buy">Add to cart</button>
-            </div>
-            <div class="book">
-                <img src="Pictures/books/15.jpeg" alt="" class="book-image">
-                <p class="title">NOVEL: Answer Key (2nd Edition)</p>
-                <h2 class="price">Rs 2,800</h2>
-                <button class="buy">Add to cart</button>
             </div> -->
+        
         </div>
+        <button id="load-more">Load More</button>
          <!-- featured-books END -->
             </div>
         </div>
@@ -272,28 +228,28 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>The Great Gatsby</td>
-                        <td>F. Scott Fitzgerald</td>
+                        <td>The vampire diaries</td>
+                        <td>Damon Salvatore</td>
                         <td>10.99</td>
                     </tr>
                     <tr>
-                        <td>To Kill a Mockingbird</td>
-                        <td>Harper Lee</td>
+                        <td>divergent series</td>
+                        <td>Four tris</td>
                         <td>12.99</td>
                     </tr>
                     <tr>
-                        <td>To Kill a Mockingbird</td>
-                        <td>Harper Lee</td>
+                        <td>shatter me</td>
+                        <td>Aoron wornar</td>
                         <td>12.99</td>
                     </tr>
                     <tr>
-                        <td>To Kill a Mockingbird</td>
-                        <td>Harper Lee</td>
+                        <td>The kite runner</td>
+                        <td>Khaleed Hossaini</td>
                         <td>12.99</td>
                     </tr>
                     <tr>
-                        <td>1984</td>
-                        <td>George Orwell</td>
+                        <td>Last 16 seconds</td>
+                        <td>Michealson Elijah</td>
                         <td> 9.99</td>
                     </tr>
                 </tbody>
