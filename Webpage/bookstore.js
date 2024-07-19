@@ -1,9 +1,74 @@
 $(document).ready(function() {
-    let bookData = []; // Store the fetched book data
-    let itemsPerPage = 3; // Number of items to show per load
-    let currentPage = 1; // Current page
-    let totalBooksDisplayed = 0; // Track total books displayed
+    let getBooks = []; 
+    let pageLimit = 3; // set page limit
+    let startCounter = 1; 
+    let booksShown = 0; 
 
+    // GET data from books.json
+    $.ajax({
+        url: 'books.json',
+        method: 'GET',
+        dataType: 'json',
+        success: function(data) 
+        {
+            getBooks = data;
+            loadBooks(); // initial books load
+ 
+    // (book searching)
+    $('#search-bar').on('keyup', function(e) {
+        let query = $(this).val().toLowerCase();
+        let matchedBookss = getBooks.filter(function(book) 
+        {
+            return (book.title.toLowerCase().includes(query));
+        });
+
+        $('.featured-books').empty(); // Clear previous results
+        booksShown = 0; // 
+
+        if (matchedBookss.length > 0) 
+        {
+            displayBooks(matchedBookss);
+        } 
+        else 
+        {
+            $('.featured-books').html('<p class="not-matched">No matching books found.</p>');
+        }
+
+        // Check if there are left after filtering
+        if (startCounter*pageLimit < matchedBookss.length) 
+        {
+            $('#load-more').show();
+            $('.no-more-data').remove(); // Remove no more data message if present
+        } 
+        else 
+        {
+            $('#load-more').hide();
+            if ($('.no-more-data').length === 0 && $('.not-matched').length === 0) {
+                $('.featured-books').append('<p class="no-more-data">No more data to show</p>'); 
+            }
+        }
+
+        // If the Enter key is pressed, focus on featured-books section
+        if (e.key === 'Enter') 
+        {
+            $('html, body').animate({
+                scrollTop: $('.featured-books').offset().top
+            }, 500);
+        }
+    });
+
+          // Event listener ---> "Load More" button
+
+            $('#load-more').on('click', function() 
+            {
+                loadBooks();
+            });
+        },
+        error: function(err) 
+        {
+            console.error('Error fetching book data:', err);
+        }
+});
     // Function to display books
     function displayBooks(books) {
         let results = '';
@@ -19,76 +84,23 @@ $(document).ready(function() {
         });
 
         $('.featured-books').append(results);
-        totalBooksDisplayed += books.length;
+        booksShown += books.length;
     }
 
     // Function to load more books
-    function loadMoreBooks() {
-        let startIndex = (currentPage - 1) * itemsPerPage;
-        let endIndex = currentPage * itemsPerPage;
-        let booksToDisplay = bookData.slice(startIndex, endIndex);
+    function loadBooks() 
+    {
+        let startIndex = (startCounter - 1) * pageLimit;
+        let endIndex = startCounter * pageLimit;
+        let booksToDisplay = getBooks.slice(startIndex, endIndex);
 
         displayBooks(booksToDisplay);
 
-        if (totalBooksDisplayed >= bookData.length) {
+        if (booksShown >= getBooks.length) {
             $('#load-more').hide(); // Hide the button if no more books to load
             $('.featured-books').append('<p class="no-more-data">No more data</p>'); // Show no more data message
         }
 
-        currentPage++;
+        startCounter++;
     }
-
-    // Fetch book data from books.json
-    $.ajax({
-        url: 'books.json',
-        method: 'GET',
-        dataType: 'json',
-        success: function(data) {
-            bookData = data;
-            loadMoreBooks(); // Initial load
-
-            // Event listener for keyup event on the search bar
-            $('#search-bar').on('keyup', function(e) {
-                let query = $(this).val().toLowerCase();
-                let filteredBooks = bookData.filter(function(book) {
-                    return book.title.toLowerCase().includes(query);
-                });
-
-                $('.featured-books').empty(); // Clear previous results
-                totalBooksDisplayed = 0; // Reset total books displayed
-
-                if (filteredBooks.length > 0) {
-                    displayBooks(filteredBooks);
-                } else {
-                    $('.featured-books').html('<p class="no-matching-books">No matching books found.</p>');
-                }
-
-                // Check if there are more books to load after filtering
-                if (currentPage * itemsPerPage < filteredBooks.length) {
-                    $('#load-more').show();
-                    $('.no-more-data').remove(); // Remove no more data message if present
-                } else {
-                    $('#load-more').hide();
-                    if ($('.no-more-data').length === 0 && $('.no-matching-books').length === 0) {
-                        $('.featured-books').append('<p class="no-more-data">No more data</p>'); // Show no more data message
-                    }
-                }
-
-                // If the Enter key is pressed, scroll to the featured-books section
-                if (e.key === 'Enter') {
-                    $('html, body').animate({
-                        scrollTop: $('.featured-books').offset().top
-                    }, 500);
-                }
-            });
-
-            // Event listener for click event on the "Load More" button
-            $('#load-more').on('click', function() {
-                loadMoreBooks();
-            });
-        },
-        error: function(err) {
-            console.error('Error fetching book data:', err);
-        }
-    });
 });
