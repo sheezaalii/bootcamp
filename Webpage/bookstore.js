@@ -1,6 +1,6 @@
 $(document).ready(function() {
     let bookData = []; // Store the fetched book data
-    let itemsPerPage = 5; // Number of items to show per load
+    let itemsPerPage = 3; // Number of items to show per load
     let currentPage = 1; // Current page
     let totalBooksDisplayed = 0; // Track total books displayed
 
