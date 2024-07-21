@@ -8,7 +8,7 @@
     
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
-    <script src="bookstore.js"></script>
+    <script src="bookstore1.js"></script>
 
     <title>My Online Bookstore</title>
 </head>
@@ -209,52 +209,83 @@
                 <button class="buy">Add to cart</button>
             </div> -->
         
+            
+
         </div>
         <button id="load-more">Load More</button>
          <!-- featured-books END -->
+         
             </div>
         </div>
 
-        <!-- special-featured-books -->
-        <div class="special-featured-books">
-            <h2>Special Feature Books</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Title</th>
-                        <th>Author</th>
-                        <th>Price (Rs)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>The vampire diaries</td>
-                        <td>Damon Salvatore</td>
-                        <td>10.99</td>
-                    </tr>
-                    <tr>
-                        <td>divergent series</td>
-                        <td>Four tris</td>
-                        <td>12.99</td>
-                    </tr>
-                    <tr>
-                        <td>shatter me</td>
-                        <td>Aoron wornar</td>
-                        <td>12.99</td>
-                    </tr>
-                    <tr>
-                        <td>The kite runner</td>
-                        <td>Khaleed Hossaini</td>
-                        <td>12.99</td>
-                    </tr>
-                    <tr>
-                        <td>Last 16 seconds</td>
-                        <td>Michealson Elijah</td>
-                        <td> 9.99</td>
-                    </tr>
-                </tbody>
-            </table>
+       <!-- featured-books and Add new book section  -->
+
+
+       <hr class="hr-class">
+        <div class="new-book-feature-book">
+            <!-- Add a book form -->
+            <div class="add-new-book">
+                <form id="add-book-form">
+                    <h2 class="add-book-form-heading">Add a <span>New Book</span></h2>
+                    <input type="text" placeholder="Add Book Title" id="title" name="title" required><br>
+                    <input type="text" placeholder="Write Author Name" id="author" name="author" required><br>
+                    <textarea placeholder="Add Book Description" id="description" name="description" required></textarea><br>
+                    <input type="text" placeholder="Add Image URL" id="imageUrl" name="imageUrl" required><br>
+                    <button type="submit">Add Book</button>
+                </form>
+            </div>
+            <!-- Special featured books -->
+            <div class="special-featured-books">
+                <h2>Special <span>Feature Books</span></h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Price (Rs)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>The Vampire Diaries</td>
+                            <td>Damon Salvatore</td>
+                            <td>10.99</td>
+                        </tr>
+                        <tr>
+                            <td>The Vampire Diaries</td>
+                            <td>Damon Salvatore</td>
+                            <td>10.99</td>
+                        </tr>
+                        <tr>
+                            <td>The Vampire Diaries</td>
+                            <td>Damon Salvatore</td>
+                            <td>10.99</td>
+                        </tr>
+                        <tr>
+                            <td>Divergent Series</td>
+                            <td>Four Tris</td>
+                            <td>12.99</td>
+                        </tr>
+                        <tr>
+                            <td>Shatter Me</td>
+                            <td>Aaron Warner</td>
+                            <td>12.99</td>
+                        </tr>
+                        <tr>
+                            <td>The Kite Runner</td>
+                            <td>Khaled Hosseini</td>
+                            <td>12.99</td>
+                        </tr>
+                        <tr>
+                            <td>Last 16 Seconds</td>
+                            <td>Michaelson Elijah</td>
+                            <td>9.99</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
+        
          <!-- special-featured-books-END -->
     </main>
 

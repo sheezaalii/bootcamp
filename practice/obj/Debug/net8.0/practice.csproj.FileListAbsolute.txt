@@ -1,0 +1,15 @@
+S:\bootcamp\practice\bin\Debug\net8.0\practice.exe
+S:\bootcamp\practice\bin\Debug\net8.0\practice.deps.json
+S:\bootcamp\practice\bin\Debug\net8.0\practice.runtimeconfig.json
+S:\bootcamp\practice\bin\Debug\net8.0\practice.dll
+S:\bootcamp\practice\bin\Debug\net8.0\practice.pdb
+S:\bootcamp\practice\obj\Debug\net8.0\practice.GeneratedMSBuildEditorConfig.editorconfig
+S:\bootcamp\practice\obj\Debug\net8.0\practice.AssemblyInfoInputs.cache
+S:\bootcamp\practice\obj\Debug\net8.0\practice.AssemblyInfo.cs
+S:\bootcamp\practice\obj\Debug\net8.0\practice.csproj.CoreCompileInputs.cache
+S:\bootcamp\practice\obj\Debug\net8.0\practice.sourcelink.json
+S:\bootcamp\practice\obj\Debug\net8.0\practice.dll
+S:\bootcamp\practice\obj\Debug\net8.0\refint\practice.dll
+S:\bootcamp\practice\obj\Debug\net8.0\practice.pdb
+S:\bootcamp\practice\obj\Debug\net8.0\practice.genruntimeconfig.cache
+S:\bootcamp\practice\obj\Debug\net8.0\ref\practice.dll
