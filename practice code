@@ -1,3 +1,131 @@
+
+//using System;
+
+//namespace HelloWorld
+//{
+//    class Program
+//    {
+//public static bool SimplePassword(string str)
+//{
+//string capital = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+//string number = "1234567890";
+//string password = "password";
+//string mathandpun = "+-=<>%!*.;,'?/";
+//bool capletter = false;
+//bool hasnum = false;
+//bool haspassword = false;
+//bool hasmathandpun = false;
+
+//if(str.Length == 0 || str.Length < 8 || str.Length > 31) return false;
+//foreach(var s in str)
+//{
+//    if (capital.Contains(s))
+//    { capletter = true; }
+//    if (number.Contains(s))
+//    { hasnum = true; }
+//    if(str.Contains(password))
+//    { haspassword = true; }
+//    if (mathandpun.Contains(s))
+//    { hasmathandpun = true; }
+
+//}
+//if((hasmathandpun == true) ||
+//    (capletter == true) ||
+//      (hasnum == true)||
+//        (haspassword == true))
+//{
+//    return true;
+//}
+//else
+//{
+//    return false;
+//}
+
+//        public static string CaesarCipher(string str, int num)
+//        {
+
+//            // code goes here 
+
+
+
+
+
+
+
+
+
+//            List<char> result = new List<char>();
+//            foreach (var s in str)
+//            {
+//                result.Add(s);
+//            }
+
+//            string fresult = "";
+
+//            foreach (var s in result)
+//            {
+//                if (s == ' ')
+//                { fresult += " "; }
+//                else
+//                { fresult = s + (char)num;}
+
+//            return fresult;
+//        }
+
+//    static void Main(string[] args)
+//        {
+
+//            string value = CaesarCipher("turkey90AAA=", 2 );
+//            Console.WriteLine(value);
+//        }
+//    }
+
+//}
+
+
+
+//using System;
+//using System.Collections.Generic;
+
+//public class ZigzagConversion
+//{
+//    public static string Convert(string s, int numRows)
+//    {
+//        if (numRows == 1 || numRows >= s.Length)
+//        {
+//            return s;
+//        }
+
+//        List<string> rows = new List<string>(new string[numRows]);
+//        int currentRow = 0;
+//        bool goingDown = false;
+
+//        for (int i = 0; i < s.Length; i++)
+//        {
+//            rows[currentRow] += s[i];
+
+//            if (currentRow == 0 || currentRow == numRows - 1)
+//            {
+//                goingDown = !goingDown;
+//            }
+
+//            currentRow += goingDown ? 1 : -1;
+//        }
+
+//        return string.Join("", rows);
+//    }
+
+//    public static void Main()
+//    {
+//        string s = "PAYPALISHIRING";
+//        int numRows = 3;
+//        string result = Convert(s, numRows);
+//        Console.WriteLine(result); // Output: PAHNAPLSIIGYIR
+//    }
+//}
+
+
+
 //using System;
 
 //namespace MyApp
@@ -345,61 +473,6 @@
 
 
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-class Practice
-{
-    public static int Duplicate(int num)
-    {
-        int sum = 0;
-        List<int> list = num.ToString().Select(x => int.Parse(x.ToString())).ToList();
-       
-        Random rand = new Random();
-
-        while (true)
-        {
-            int randomindex = rand.Next(list.Count);
-            int randomnumber = list[randomindex];
-
-            int length = list.Count;
-            bool hasAdjacentDuplicates = false;
-
-            for (int i = 0; i < length; i++)
-            {
-                int newvalue = list[i] * randomnumber;
-                list.Add(newvalue);
-
-                if (list.Count > 1 && list[list.Count - 1] == list[list.Count - 2])
-                {
-                    hasAdjacentDuplicates = true;
-                    break;
-                }
-            }
-            sum++;
-           
-            if (hasAdjacentDuplicates)
-            {
-                Console.WriteLine(string.Join(", ", list));
-                return sum;
-
-            }
-        }
-            
-        }
-        static void Main(string[] args)
-        {
-            int num = 123; // Example number
-            int result = Duplicate(num);
-            Console.WriteLine($"Multiplications done: {result}");
-        }
-
-    }
-
-
-
-
-
 
 
 //using System;
@@ -452,6 +525,404 @@ class Practice
 //        Console.WriteLine(result);
 //    }
 //}
+
+
+
+
+
+
+
+
+//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//class Practice
+//    {
+//        public static int Duplicate(int num)
+//        {
+//            int sum = 0;
+//            List<int> list = num.ToString().Select(x => int.Parse(x.ToString())).ToList();
+
+//            Random rand = new Random();
+
+//            while (true)
+//            {
+//                int randomindex = rand.Next(list.Count);
+//                int randomnumber = list[randomindex];
+
+//                int length = list.Count;
+//                bool hasAdjacentDuplicates = false;
+
+//                for (int i = 0; i < length; i++)
+//                {
+//                    int newvalue = list[i] * randomnumber;
+//                    list.Add(newvalue);
+
+//                    if (list.Count > 1 && list[list.Count - 1] == list[list.Count - 2])
+//                    {
+//                        hasAdjacentDuplicates = true;
+//                        break;
+//                    }
+//                }
+//                sum++;
+
+//                if (hasAdjacentDuplicates)
+//                {
+//                    Console.WriteLine(string.Join(", ", list));
+//                    return sum;
+
+//                }
+//            }
+
+//        }
+//        static void Main(string[] args)
+//        {
+//            int num = 123; // Example number
+//            int result = Duplicate(num);
+//            Console.WriteLine($"Multiplications done: {result}");
+//        }
+
+//    }
+
+
+//using System;
+//using System.Collections.Generic;
+
+//class Practice
+//{
+//    public static int MaxHistogramArea(int[] arr)
+//    { 
+//        Stack<int> stack = new Stack<int>();
+//        int index = 0;
+//        int maxarea = 0;
+//        while (index < arr.Length) {
+//            if ((stack.Count == 0) || arr[stack.Peek()] <= arr[index])  
+//            {
+//                stack.Push(index++);
+//            }
+//            else
+//            {
+//                int top = stack.Pop();
+//                int area = arr[top] * (stack.Count == 0 ? index : index-stack.Peek()-1);
+//                maxarea =  Math.Max(maxarea, area);
+//            }
+//        }
+//        while (stack.Count > 0) 
+//        {
+//            int top = stack.Pop();
+//            int area = arr[top] * (stack.Count == 0 ? index : index - stack.Peek() - 1);
+//            maxarea = Math.Max(maxarea, area);
+//        }
+
+
+//        return maxarea;
+//    }
+//    static void Main(string[] args)
+//    {
+//        int[] arr = { 1, 2, 3, 4, 5 };
+//        int maxarea = MaxHistogramArea(arr);
+//        Console.WriteLine(maxarea);
+//    }
+//}
+
+
+
+//using System;
+//using System.Collections.Generic;
+
+//class Practice
+//{
+//    public static int Trappingwater(int[] arr)
+//    {
+//        int n = arr.Length;
+//        int[] leftarray = new int[n];
+//        int[] rightarray = new int[n];
+//        int left = 0;
+//        int right = 0;
+//        int watertrapped = 0;
+//        if (arr.Length == 0) { return 0; }
+
+//        leftarray[0] = arr[0];
+//        for (int i = 1; i < n; i++) {
+//            leftarray[i] = Math.Max(leftarray[i-1], arr[i]);
+//        }
+
+//        rightarray[n-1] = arr[n-1];
+//        for (int i = n - 2; i >= 0; i--) {
+//            rightarray[i] = Math.Max(arr[i], rightarray[i + 1]);
+//        }
+
+//        for (int i = 0; i < n; i++) {
+//            watertrapped += Math.Min(leftarray[i], rightarray[i]) - arr[i];
+//        }
+
+
+
+//        return watertrapped;
+//    }
+//    static void Main(string[] args)
+//    {
+//        int[] height = { 4, 2, 0, 3, 2, 5 };
+//        int result = Trappingwater(height);
+//        Console.WriteLine(result);
+//    }
+//}
+
+
+
+
+
+
+//using System;
+//using System.Collections.Generic;
+
+//public class Solution
+//{
+//    public List<List<string>> GroupAnagrams(string[] strs)
+//    {
+//        Dictionary<string, List<string>> anagrams = new Dictionary<string, List<string>>();
+
+//        foreach (string str in strs)
+//        {
+//            char[] charArray = str.ToCharArray();
+//            Array.Sort(charArray);
+//            string sortedStr = new string(charArray);
+
+//            if (!anagrams.ContainsKey(sortedStr))
+//            {
+//                anagrams[sortedStr] = new List<string>();
+//            }
+
+
+//            anagrams[sortedStr].Add(str);
+//        }
+
+
+//        List<List<string>> result = new List<List<string>>();
+//        foreach (var group in anagrams.Values)
+//        {
+//            result.Add(group);
+//        }
+//        return result;
+//    }
+
+//    public static void PrintResult(List<List<string>> result)
+//    {
+//        foreach (var group in result)
+//        {
+//            Console.WriteLine(string.Join(", ", group));
+//        }
+//    }
+
+//    public static void Main()
+//    {
+//        Solution solution = new Solution();
+
+//        string[] strs1 = new string[] { "eat", "tea", "tan", "ate", "nat", "bat" };
+
+
+//        var result1 = solution.GroupAnagrams(strs1);
+
+
+//        PrintResult(result1);
+
+//    }
+
+
+//}
+
+
+
+
+
+
+//using System;
+
+//class MainClass
+//{
+//    public static int MinJumps(int[] arr)
+//    {
+//        if (arr.Length <= 1) return 0;
+
+//        int jumps = 0;
+//        int currentEnd = 0;
+//        int farthest = 0;
+
+//        for (int i = 0; i < arr.Length - 1; i++)
+//        {
+//            farthest = Math.Max(farthest, i + arr[i]);
+
+//            // If we've reached the end of the range for the current jump
+//            if (i == currentEnd)
+//            {
+//                jumps++;
+//                currentEnd = farthest;
+
+//                // If we can already reach the end, break early
+//                if (currentEnd >= arr.Length - 1)
+//                {
+//                    break;
+//                }
+//            }
+//        }
+
+//        return jumps;
+//    }
+
+//    static void Main()
+//    {
+//        // Test the function with different arrays
+//        Console.WriteLine(MinJumps(new int[] { 2, 3, 1, 1, 2, 4, 2, 0, 1, 1 })); // Should output 4
+//        Console.WriteLine(MinJumps(new int[] { 1, 2, 3, 4, 5 })); // Should output 3
+//        Console.WriteLine(MinJumps(new int[] { 2, 1, 1, 1, 2, 1, 1, 2, 1, 2 })); // Should output 5
+//    }
+//}
+
+
+
+
+
+using System;
+
+//class MainClass
+//{
+
+//    public static string BitwiseOne(string[] strArr)
+//    {
+//        string str1 = strArr[0];
+//        string str2 = strArr[1];
+//        string result = "";
+//        int l = str1.Length;
+//        for (int i = 0; i < l; i++) 
+//        {
+//            if (str1[i] == '0' && str2[i] == '0')
+//            {
+//                result += '0';
+//            }
+//            else
+//            {
+//                result += '1';
+//            }
+//        }
+//        return result;
+//    }
+
+//    static void Main(string[] args)
+//    {
+//        string[] strArr = new string[] { "00011", "01010" };
+//        // keep this function call here
+//        string result = BitwiseOne(strArr);
+//        Console.WriteLine(result);
+
+
+//    }
+
+//}
+
+
+
+using System;
+
+//class MainClass
+//{
+
+//    public static double NumberSearch(string str)
+//    {
+
+//        double totalnum = 0;
+//        double totalletter = 0;
+//        foreach (char c in str) 
+//        {
+//            if (char.IsLetter(c))
+//            {
+//                totalletter ++;
+//            }
+//            if (char.IsDigit(c))
+//            {
+//             int num = c - '0';
+//             totalnum += num; 
+
+//            }
+//        }
+
+//        double output = totalnum/totalletter;
+//        return Math.Round(output);
+
+//    }
+
+//    static void Main(string[] args)
+//    {
+//        double result = NumberSearch("One Number*1*");
+//        Console.WriteLine(result);
+
+//    }
+
+//}
+
+
+
+
+
+
+using System;
+using System.Collections.Generic;
+
+class MainClass
+{
+
+    public static void StringExpression(string str)
+    {
+        Dictionary<string, string> values = new Dictionary<string, string>()
+        {
+            {"zero", "0"},
+            {"one", "1"},
+            {"two" ,"2"},
+            {"three", "3"},
+            {"four" ,"4"},
+            {"five","5" },
+            {"six", "6" },
+            { "seven","7"},
+            {"eight","8" },
+            {"nine", "0" },
+            {"minus","-" },
+            {"plus", "+" }
+        };
+        
+        string[] strr = str.Split("plus");
+        string newstr = str.ToString();
+        Console.WriteLine(newstr);
+
+
+        
+    }
+
+    static void Main(string[] args)
+    {
+        StringExpression("onezeropluseight");
+
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
