@@ -1,0 +1,465 @@
+//using System;
+
+//namespace MyApp
+//{
+//    internal class Program
+//    {
+//        public static int hungerlvldiff(int[] array)
+//        {
+//            int sandwitches = array[0];
+//            int[] hungerlevel = array.Skip(1).ToArray();
+
+
+//            while (sandwitches > 0)
+//            {
+
+//                int maxindex = Array.IndexOf(hungerlevel, hungerlevel.Max());
+//                if (hungerlevel[maxindex] > 0)
+//                {
+//                    hungerlevel[maxindex]--;
+//                    sandwitches--;
+//                }
+//                else { break; }
+
+//            }
+
+//            int maxhungerlevel = hungerlevel.Max();
+//            int minhungerlevel = hungerlevel.Min();
+
+
+//            return maxhungerlevel - minhungerlevel;
+//        }
+//        static void Main(string[] args)
+//        {
+//            int[] array = new int[] { 5, 1, 4, 5, 4, 0 };
+//            int result = hungerlvldiff(array);
+//            Console.WriteLine(result);
+
+//        }
+//    }
+//}
+
+
+
+
+
+//using System;
+//using System.Collections.Generic;
+
+//namespace MyApp
+//{
+//    internal class Program
+//    {
+//        public static bool IsPalindrome(string str, int i)
+//        {
+//            int l = str.Length;
+//            if (i >= l / 2)
+//            { return true; }
+//            if (str[i] != str[l - i - 1])
+//            { return false; }
+//            return IsPalindrome(str, i + 1);
+//        }
+//        public static string longestPalinderome(string s)
+//        {
+//            List<string> list = new List<string>();
+
+//            for (int i = 0; i < s.Length; i++)
+//            {
+//                for (int j = i + 1; j <= s.Length; j++)
+//                {
+//                    string substring = s.Substring(i, j - i);
+//                    bool check = IsPalindrome(substring, 0);
+//                    if (check)
+//                    {
+//                        list.Add(substring);
+//                    }
+//                }
+//            }
+
+//            if (list.Count == 0) return "";
+//            string longestpalindrome = list[0];
+//            foreach (string str in list)
+//            {
+//                if (str.Length > longestpalindrome.Length)
+//                {
+//                    longestpalindrome = str;
+//                }
+
+
+//            }
+
+//            return longestpalindrome;
+
+//        }
+//        static void Main(string[] args)
+//        {
+
+//            string str = "ahsmadamlo";
+//            string result = longestPalinderome(str);
+//            Console.WriteLine(result);
+//        }
+//    }
+//}
+
+
+
+
+
+
+
+
+//using System;
+
+//class Practice
+//{
+
+//    public static int MaxUniqueChar(string str)
+//    {
+//        int maxvalue = int.MinValue;
+//        for (int i = 0; i < str.Length; i++) {
+//            for (int j = i+1; j < str.Length; j++)
+//            {
+//                if(str[i] == str[j])
+//                {
+//                    string substring = str.Substring(i + 1, j - i -1);
+//                    HashSet<char> set = new HashSet<char>(substring);
+//                    int maxstring = set.Count;
+//                    if(maxstring > maxvalue)
+//                    {
+//                        maxvalue = maxstring;
+//                    }
+//                }
+//            }
+//        }
+//        return maxvalue;
+//    }
+
+//    static void Main(string[] args)
+//    {
+//        string str = "ahakduelh";
+//        int result = MaxUniqueChar(str);
+//        Console.WriteLine(result);
+//    }
+//}
+
+
+
+
+
+
+//using System;
+//class Practice {
+
+//    public static string chephar(string str, int num) {
+//        string result = "";
+//        foreach(var s in str) {
+
+//            if (char.IsLetter(s)) 
+//            { 
+//                int char1 = (int)s;
+//                int char2 = char1 + num;
+//                result += (char)char2;
+//            }
+//            else
+//            {
+//                result += s;
+//            }
+//        }
+
+//        return result;
+
+//    }
+
+
+
+//    static void Main(string[] args)
+//    {
+//        string result = chephar("Hello", 4);
+//        Console.WriteLine(result);
+//    }
+
+//}
+
+
+
+
+
+//using System;
+//class Practice
+//{
+//    public static int maxDiff(int[] arr)
+//    {
+//        int min = arr[0];
+//        int maxdiff = arr[1] - arr[0];
+//        for (int i = 1; i < arr.Length; i++) {
+//            if (arr[i] - min > maxdiff )
+//            {
+//                maxdiff = arr[i] - min;
+//            }
+//            if (arr[i] < min)
+//            {
+//                arr[i] = min;
+//            }
+//        }
+//        return maxdiff;
+//    }
+
+//    public static int MinDiff(int[] arr) {
+//        int max = arr[0];
+//        int mindiff = arr[1] - arr[0];
+//        for (int i = 1; i < arr.Length; i++) { 
+//            if(arr[i] - max < mindiff)
+//            {
+//                mindiff = arr[i] - max;
+//            }
+//            if (arr[i] < max)
+//            {
+//                max = arr[i];
+//            }
+//        }
+//        return mindiff;
+//    }
+
+//    static void Main(string[] args)
+//{
+//        int[] arr = new int[] {1, 2, 4, 3, 9};
+//        int maxdiff = maxDiff(arr);
+//        Console.WriteLine(maxdiff);
+
+//        int mindiff = MinDiff(arr);
+//        Console.WriteLine(mindiff);
+//}
+
+//}
+
+
+
+
+
+
+
+//using System;
+//using System.Collections.Generic;
+//class Practice
+//{
+//    public static List<int> LuckyNumbers(int[][] arr)
+//    {
+//        List<int> list = new List<int>();
+//        int[] minrow = new int[arr.Length];
+//        for (int i = 0; i < arr.Length; i++) {
+//            int minvalue = int.MaxValue;
+//            for (int j = 0; j < arr[i].Length; j++)
+//            {
+//                if(arr[i][j] < minvalue)
+//                {
+//                    minvalue = arr[i][j];
+//                }
+//            }
+//        minrow[i] = minvalue;
+//        }
+
+//        int[] maxcol = new int[arr[0].Length];
+//        for (int j = 0; j < arr.Length; j++) {
+//            int maxvalue = int.MinValue;
+//            for(int i = 0; i < arr.Length; i++)
+//            {
+//                if( arr[i][j] > maxvalue)
+//                {
+//                    maxvalue = arr[i][j];
+//                }
+//            }
+//            maxcol[j] = maxvalue;
+//        }
+//        for (int i = 0; i < arr.Length; i++) {
+//            for(int j = 0; j < arr[i].Length; j++)
+//            {
+//                if (arr[i][j] == maxcol[j] && arr[i][j] == minrow[i])
+//                {
+//                    list.Add(arr[i][j]);
+//                }
+//            }
+//        }
+//        return list;
+
+//    }
+//    static void Main(string[] args)
+//    {
+//        int[][] matrix1 = new int[][] {
+//            new int[] {3, 7, 8},
+//            new int[] {9, 11, 13},
+//            new int[] {15, 16, 17}
+//        };
+
+//        Console.WriteLine("Lucky Numbers in matrix1: " + string.Join(", ", LuckyNumbers(matrix1)));
+
+//    }
+
+//}
+
+
+
+
+
+
+//using System;
+//using System.Collections.Generic;
+//class Practice
+//{
+//    public static string Bracketmatch(string str)
+//    {
+//        Stack<char> stack = new Stack<char>();
+//        int sum = 0;
+//        foreach (char c in str)
+//        {
+//            if (c == '(' || c == '{' || c == '[')
+//            {
+//                stack.Push(c);
+//            }
+//            char top = stack.Peek();
+//            if (str.Length == 0) { return ""; }
+//            if ((c == ')' && top == '(') ||
+//               (c == '}' && top == '{') ||
+//               (c == ']' && top == '['))
+//            {
+//                stack.Pop();
+//                sum++;
+//            }
+
+//        }
+//        if (stack.Count == 0)
+//        {
+//            return "true " + sum.ToString();
+//        }
+//        else { return "false"; }
+//    }
+
+//    static void Main(string[] args)
+//    {
+//        string result = Bracketmatch("(hllo");
+//        Console.WriteLine(result);
+//    }
+
+//}
+
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+class Practice
+{
+    public static int Duplicate(int num)
+    {
+        int sum = 0;
+        List<int> list = num.ToString().Select(x => int.Parse(x.ToString())).ToList();
+       
+        Random rand = new Random();
+
+        while (true)
+        {
+            int randomindex = rand.Next(list.Count);
+            int randomnumber = list[randomindex];
+
+            int length = list.Count;
+            bool hasAdjacentDuplicates = false;
+
+            for (int i = 0; i < length; i++)
+            {
+                int newvalue = list[i] * randomnumber;
+                list.Add(newvalue);
+
+                if (list.Count > 1 && list[list.Count - 1] == list[list.Count - 2])
+                {
+                    hasAdjacentDuplicates = true;
+                    break;
+                }
+            }
+            sum++;
+           
+            if (hasAdjacentDuplicates)
+            {
+                Console.WriteLine(string.Join(", ", list));
+                return sum;
+
+            }
+        }
+            
+        }
+        static void Main(string[] args)
+        {
+            int num = 123; // Example number
+            int result = Duplicate(num);
+            Console.WriteLine($"Multiplications done: {result}");
+        }
+
+    }
+
+
+
+
+
+
+
+//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+
+//class Pactice
+//{
+//    public static string Matchingstrings(string str)
+//    {
+
+//        List<string> stringlist = new List<string>();
+//        List<string> querylist = new List<string>();
+
+//        string[] strarray = str.Split(" ");
+//        int length = int.Parse(strarray[0]);
+//        for (int i = 1; i <= length; i++)
+//        {
+//            stringlist.Add(strarray[i]);
+//        }
+//        for (int i = length + 2; i < strarray.Length; i++)
+//        {
+//            querylist.Add(strarray[i]);
+//        }
+
+//        string result = "";
+
+//        for(int i = 0; i < querylist.Count; i++) {
+//            int count = 0;
+//            foreach (var strings in stringlist) {
+//                if (querylist[i] == strings) 
+//                {
+//                    count++;
+//                }
+
+//            }
+
+//            result += count + ", ";
+
+//        }
+
+
+//        return result; 
+//    }
+
+
+//    static void Main(string[] args)
+//    {
+//       string result = Matchingstrings("4 aba baba aba xzxb 3 aba xzxb ab");
+//        Console.WriteLine(result);
+//    }
+//}
+
+
+
+
+
+
+
+
+
+
+
