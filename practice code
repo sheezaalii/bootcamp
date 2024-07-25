@@ -44,15 +44,7 @@
 //        public static string CaesarCipher(string str, int num)
 //        {
 
-//            // code goes here 
-
-
-
-
-
-
-
-
+//            // code goes here
 
 //            List<char> result = new List<char>();
 //            foreach (var s in str)
@@ -84,45 +76,7 @@
 
 
 
-//using System;
-//using System.Collections.Generic;
 
-//public class ZigzagConversion
-//{
-//    public static string Convert(string s, int numRows)
-//    {
-//        if (numRows == 1 || numRows >= s.Length)
-//        {
-//            return s;
-//        }
-
-//        List<string> rows = new List<string>(new string[numRows]);
-//        int currentRow = 0;
-//        bool goingDown = false;
-
-//        for (int i = 0; i < s.Length; i++)
-//        {
-//            rows[currentRow] += s[i];
-
-//            if (currentRow == 0 || currentRow == numRows - 1)
-//            {
-//                goingDown = !goingDown;
-//            }
-
-//            currentRow += goingDown ? 1 : -1;
-//        }
-
-//        return string.Join("", rows);
-//    }
-
-//    public static void Main()
-//    {
-//        string s = "PAYPALISHIRING";
-//        int numRows = 3;
-//        string result = Convert(s, numRows);
-//        Console.WriteLine(result); // Output: PAHNAPLSIIGYIR
-//    }
-//}
 
 
 
@@ -585,6 +539,10 @@
 //    }
 
 
+
+
+
+
 //using System;
 //using System.Collections.Generic;
 
@@ -627,46 +585,10 @@
 
 
 
-//using System;
-//using System.Collections.Generic;
-
-//class Practice
-//{
-//    public static int Trappingwater(int[] arr)
-//    {
-//        int n = arr.Length;
-//        int[] leftarray = new int[n];
-//        int[] rightarray = new int[n];
-//        int left = 0;
-//        int right = 0;
-//        int watertrapped = 0;
-//        if (arr.Length == 0) { return 0; }
-
-//        leftarray[0] = arr[0];
-//        for (int i = 1; i < n; i++) {
-//            leftarray[i] = Math.Max(leftarray[i-1], arr[i]);
-//        }
-
-//        rightarray[n-1] = arr[n-1];
-//        for (int i = n - 2; i >= 0; i--) {
-//            rightarray[i] = Math.Max(arr[i], rightarray[i + 1]);
-//        }
-
-//        for (int i = 0; i < n; i++) {
-//            watertrapped += Math.Min(leftarray[i], rightarray[i]) - arr[i];
-//        }
 
 
 
-//        return watertrapped;
-//    }
-//    static void Main(string[] args)
-//    {
-//        int[] height = { 4, 2, 0, 3, 2, 5 };
-//        int result = Trappingwater(height);
-//        Console.WriteLine(result);
-//    }
-//}
+
 
 
 
@@ -752,7 +674,7 @@
 //        {
 //            farthest = Math.Max(farthest, i + arr[i]);
 
-//            // If we've reached the end of the range for the current jump
+//  
 //            if (i == currentEnd)
 //            {
 //                jumps++;
@@ -772,9 +694,8 @@
 //    static void Main()
 //    {
 //        // Test the function with different arrays
-//        Console.WriteLine(MinJumps(new int[] { 2, 3, 1, 1, 2, 4, 2, 0, 1, 1 })); // Should output 4
-//        Console.WriteLine(MinJumps(new int[] { 1, 2, 3, 4, 5 })); // Should output 3
-//        Console.WriteLine(MinJumps(new int[] { 2, 1, 1, 1, 2, 1, 1, 2, 1, 2 })); // Should output 5
+//        Console.WriteLine(MinJumps(new int[] { 2, 3, 1, 1, 2, 4, 2, 0, 1, 1 })); 
+//        
 //    }
 //}
 
@@ -782,7 +703,7 @@
 
 
 
-using System;
+//using System;
 
 //class MainClass
 //{
@@ -821,7 +742,7 @@ using System;
 
 
 
-using System;
+//using System;
 
 //class MainClass
 //{
@@ -864,71 +785,521 @@ using System;
 
 
 
+
+
+
+
+
+
+
+
+//using System;
+//using System.Collections.Generic;
+
+//class Practice
+//{
+//    public static int Trappingwater(int[] arr)
+//    {
+//        int n = arr.Length;
+//        int[] leftmaxarray = new int[n];
+//        int[] rightmaxarray = new int[n];
+//        int totalwatertrapped = 0;
+
+//        leftmaxarray[0] = arr[0];
+//        for (int i = 1; i<n; i++)
+//        {
+//            leftmaxarray [i] = Math.Max(leftmaxarray[i-1], arr[i]);
+//        }
+
+//        rightmaxarray[n-1] = arr[n-1];
+//        for (int i = n-2; i>=0; i--)
+//        {
+//            rightmaxarray[i] = Math.Max(rightmaxarray[i+1], arr[i]);
+//        }
+
+//        for(int i = 0; i<n; i++)
+//        {
+//            totalwatertrapped += Math.Min(leftmaxarray[i], rightmaxarray[i]) - arr[i];
+//        }
+
+//        return totalwatertrapped;
+//    }
+//    static void Main(string[] args)
+//    {
+//        int[] height = { 4, 2, 0, 3, 2, 5 };
+//        int result = Trappingwater(height);
+//        Console.WriteLine(result);
+//    }
+//}
+
+
+
+
+
+
+
+
+//using System;
+//using System.Collections.Generic;
+//using System.Text;
+
+//class Practice
+//{
+//    public static string ZigZag(string str, int row)
+//    {
+//        if(str.Length <= 0) return str;
+//        StringBuilder[] rows = new StringBuilder[row];
+//        for (int i = 0; i < row; i++)
+//        {
+//            rows[i] = new StringBuilder();
+//        }
+//        bool goingdown = false;
+//        int currentrow = 0;
+//        foreach(var s  in str)
+//        {
+//            rows[currentrow].Append(s);
+//            if(currentrow == 0 || currentrow == row - 1)
+//            {
+//                goingdown = !goingdown;
+//            }
+
+//            currentrow += goingdown ? 1 : -1;
+//        }
+//        StringBuilder result = new StringBuilder();
+//        foreach (StringBuilder s in rows)
+//        {
+//            result.Append(s);
+//        }
+
+//        return result.ToString();
+//    }
+
+//    static void Main(string[] args)
+//    {
+//        string result = (ZigZag("PAYPALISHIRING", 3));
+//        Console.WriteLine(result);
+//    }
+//}
+
+
+
+
+
+
+
+
+
+
+//using System;
+//using System.Collections.Generic;
+//using System.Text;
+
+//class Practice
+//{
+
+//    public static string RunLength(string str)
+//    {
+//        if(str.Length <= 0) return str;
+//        int n = str.Length;
+//        StringBuilder result = new StringBuilder();
+//        char currentChar = str[0];
+//        int count = 1;
+//        for(int i = 1; i<n; i++) {
+
+//            if (str[i] == currentChar)
+//            {
+//                count++;
+//            }
+//            else
+//            {
+//                result.Append(currentChar);
+//                result.Append(count);
+//                currentChar = str[i];
+//                count = 1;
+//            }         
+//        }
+//        result.Append(currentChar);
+//        result.Append(count);
+
+//        return result.ToString();
+//    }
+//    static void Main(string[] args)
+//    {
+//        string result = RunLength("aaabbbccaa");
+//        Console.WriteLine(result);
+//    }
+//}
+
+
+
+
+
+
+
+//using System;
+//using System.Collections.Generic;
+//using System.Text;
+
+
+//class Practice
+//{
+//    public static bool Palindrome2(string s)
+//    {
+//        StringBuilder filtered = new StringBuilder();
+//        foreach (char c in s)
+//        {
+//            if(char.IsLetterOrDigit(c))
+//            {
+//                filtered.Append(char.ToLower(c));
+//            }
+//        }
+//        int left = 0; int right = filtered.Length-1;
+//        while (left < right)
+//        {
+//            if (filtered[left] != filtered[right] )
+//            {
+//                return false;
+//            }
+//            left++;
+//            right--;
+//        }
+//        return true;
+//    }
+//    static void Main(string[] args)
+//    {
+//        string value = "A man, a plan, a canal: Panama";
+//        bool result = Palindrome2(value);
+//        Console.WriteLine(result);
+//    }
+//}
+
+
+
+
+
+
+
+
+//using System;
+//using System.Collections.Generic;
+//using System.Text;
+
+//class Practice
+//{
+//    public static string ArithGeo(int[] arr)
+//    {
+//        if (arr.Length < 2) return "Neither";
+//        bool isArithmetic = true;
+//        bool isGeometric = true;
+
+//        int diff = arr[1] - arr[0];
+//        double ratio = (double)arr[1] / arr[0];
+
+//        for (int i = 1; i < arr.Length -1; i++)
+//        {
+//            if (arr[i + 1] - arr[i] != diff)
+//            { isArithmetic = false; }
+//            if (arr[i + 1] / arr[i] != ratio)
+//            { isGeometric = false; }
+//        }
+
+//        if (isArithmetic && isGeometric) { return "Both"; }
+//        if (isArithmetic) { return "Arithmetic"; }
+//        if (isGeometric) { return "Geometric"; }
+//        return "Neither";
+//        }
+
+//        static void Main(string[] args)
+//    {
+//        int[] arr1 = { 2, 4, 6, 8, 10 };
+//        Console.WriteLine(ArithGeo(arr1)); // Output: Arithmetic
+
+//    }
+//}
+
+
+
+
+
+
+
+
+//using System;
+//using System.Collections.Generic;
+//using System.Text;
+
+//class Practice
+//{
+//    public static int SimpleMode(int[] arr)
+//    {
+//        Dictionary<int, int> frequencies = new Dictionary<int, int>();
+//        int mode = arr[0];
+//        int maxcount = 1;
+
+//        foreach(var val in arr)
+//        {
+//            if(frequencies.ContainsKey(val))
+//            {
+//                frequencies[val]++;
+//            }
+//            else
+//            {
+//                frequencies[val] = 1;
+//            }
+
+//            if(frequencies[val] > maxcount)
+//            {
+//                maxcount = frequencies[val];
+//                mode = val;
+//            }else if (frequencies[val] ==  maxcount && val < mode)
+//            {
+//                mode = val;
+//            }
+//        }
+
+//        return mode;
+
+//    }
+//    static void Main(string[] args)
+//    {
+//        int[] arr = { 3, 3, 3, 2, 2,2, 1 };
+
+//        Console.WriteLine(SimpleMode(arr));
+//    }
+
+//}
+
+
+
+
+
+
+
+//using System;
+
+//public class Solution
+//{
+//    public static string FormattedDivision(int numerator, int denominator)
+//    {
+//        double result = (double)numerator / denominator;
+//        string formattedResult = result.ToString("N4");
+
+//        // Ensure to round the number to exactly 4 decimal places
+//        double roundedResult = Math.Round(result, 4);
+
+//        // Format the rounded result with comma separation
+//        string finalResult = roundedResult.ToString("#,##0.0000");
+
+//        return finalResult;
+//    }
+
+//    static void Main()
+//    {
+//        // Example test cases
+//        Console.WriteLine(FormattedDivision(123456789, 10000)); // "12,345.6789"
+//        Console.WriteLine(FormattedDivision(12345, 67));        // "184.3284"
+
+//    }
+//}
+
+
+
+
+
+
+
+
+//using System;
+//using System.Collections.Generic;
+//using System.Security.Cryptography.X509Certificates;
+//using System.Text;
+
+//class Practice
+//{
+//    public static string DashInsertII(string input)
+//    {
+//        if (input == null) return "";
+//        StringBuilder result = new StringBuilder();
+//        for (int i = 0; i < input.Length - 1; i++)
+//        {
+//            result.Append(input[i]);
+
+//            int currentnum = input[i] - '0';
+//            int nextnum = input[i + 1] - '0';
+
+//            if(Isodd(currentnum) &&  Isodd (nextnum))
+//            { result.Append('-'); }
+//            else if(Iseven(currentnum) && Iseven(nextnum))
+//            { result.Append("*"); }
+
+//        }
+
+//        result.Append(input[input.Length - 1]);
+
+
+//        return result.ToString();
+
+//    }
+
+//    public  static bool Iseven(int number)
+//    { return number % 2 == 0; }
+//    public static bool Isodd(int number)
+//    { return number % 2 == 1;  }
+
+//    static void Main(string[] args)
+//    {
+//        string str = "4546793";
+//        string result = DashInsertII(str);
+//        Console.WriteLine(result);
+//    }
+
+//}
+
+
+
+
+
+
+
+//using System;
+//using System.Collections.Generic;
+//using System.Text;
+
+//class Practice
+//{
+//    public static string SwapII(string input)
+//    {
+//        if (input == null) return "";
+//        StringBuilder output = new StringBuilder();
+//        List<char> numbers = new List<char>();
+
+//        for (int i = 0; i < input.Length; i++)
+//        {
+//            char current = input[i];
+//            if (char.IsLetter(current))
+//            {
+//                if (char.IsLower(current))
+//                {
+//                    output.Append(char.ToUpper(current));
+//                }
+//                else
+//                {
+//                    output.Append(char.ToLower(current));
+//                }
+//            }
+//            else if (char.IsDigit(current))
+//            {
+//                numbers.Add(current);
+//                output.Append('#');
+//            }
+//            else
+//            { output.Append(current); }
+
+//        }
+
+//        for (int i = 0; i<numbers.Count - 1; i+=2)
+//        {
+//            char temp = numbers[i];
+//            numbers[i] = numbers[i+1];
+//            numbers[i+1] = temp;
+//        }
+
+//        int index = 0;
+//        for(int i = 0; i < output.Length; i++ )
+//        {
+//            if( output[i] == '#')
+//            {
+//                output[i] = numbers[index++];
+//            }
+//        }
+
+
+//        return output.ToString();
+
+//    }
+
+
+//    static void Main(string[] args)
+//    {
+//        string input = "6Hello4 -8World, 7 yes3";
+//        string output = SwapII(input);
+//        Console.WriteLine("Output: " + output); 
+//    }
+//}
+
+
+
+
+
+
+
+
 using System;
 using System.Collections.Generic;
+using System.Text;
 
-class MainClass
+class Practice
 {
-
-    public static void StringExpression(string str)
+    public static string SwapII(string input)
     {
-        Dictionary<string, string> values = new Dictionary<string, string>()
+        if (input == null) return "";
+        StringBuilder output = new StringBuilder();
+        List<char> numbers = new List<char>();
+
+        for (int i = 0; i < input.Length; i++)
         {
-            {"zero", "0"},
-            {"one", "1"},
-            {"two" ,"2"},
-            {"three", "3"},
-            {"four" ,"4"},
-            {"five","5" },
-            {"six", "6" },
-            { "seven","7"},
-            {"eight","8" },
-            {"nine", "0" },
-            {"minus","-" },
-            {"plus", "+" }
-        };
-        
-        string[] strr = str.Split("plus");
-        string newstr = str.ToString();
-        Console.WriteLine(newstr);
+            char current = input[i];
+            if (char.IsLetter(current))
+            {
+                if (char.IsLower(current))
+                {
+                    output.Append(char.ToUpper(current));
+                }
+                else
+                {
+                    output.Append(char.ToLower(current));
+                }
+            }
+            else if (char.IsDigit(current))
+            {
+                numbers.Add(current);
+                output.Append('#');
+            }
+            else
+            { output.Append(current); }
+
+        }
+
+        for (int i = 0; i < numbers.Count - 1; i += 2)
+        {
+            char temp = numbers[i];
+            numbers[i] = numbers[i + 1];
+            numbers[i + 1] = temp;
+        }
+
+        int index = 0;
+        for (int i = 0; i < output.Length; i++)
+        {
+            if (output[i] == '#')
+            {
+                output[i] = numbers[index++];
+            }
+        }
 
 
-        
+        return output.ToString();
+
     }
+
 
     static void Main(string[] args)
     {
-        StringExpression("onezeropluseight");
-
-
+        string input = "6Hello4 -8World, 7 yes3";
+        string output = SwapII(input);
+        Console.WriteLine("Output: " + output);
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
